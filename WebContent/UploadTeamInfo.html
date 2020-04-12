@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Upload Team Information</title>
+<style>
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.form-style {
+	width: 70vw;
+	padding: 30px;
+	margin: 5vw auto;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+.form-style .inner-wrap {
+	padding: 30px;
+	background: #F8F8F8;
+	border-radius: 6px;
+	margin-bottom: 15px;
+}
+
+.form-style .inner-wrap:hover {
+	box-shadow: 0px 5px 13px 7px rgba(0, 0, 0, 0.2);
+	transition-duration: 0.5s;
+}
+
+.form-style h1 {
+	background: dodgerblue;
+	padding: 20px 30px 15px 30px;
+	margin: -30px -30px 30px -30px;
+	border-radius: 10px 10px 0 0;
+	-webkit-border-radius: 10px 10px 0 0;
+	-moz-border-radius: 10px 10px 0 0;
+	color: #fff;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+	font: normal 30px 'Bitter', serif;
+}
+
+.form-style h1>span {
+	display: block;
+	margin-top: 2px;
+	font: 13px Arial, Helvetica, sans-serif;
+}
+
+.form-style label {
+	display: block;
+	font: 13px Arial, Helvetica, sans-serif;
+	color: #888;
+	margin-bottom: 15px;
+}
+
+.form-style input[type="text"], .form-style input[type="date"],
+	.form-style input[type="datetime"], .form-style input[type="email"],
+	.form-style input[type="number"], .form-style input[type="search"],
+	.form-style input[type="time"], .form-style input[type="url"],
+	.form-style input[type="password"], .form-style textarea, .form-style select
+	{
+	display: block;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	padding: 8px;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border: 2px solid #fff;
+}
+
+.form-style .section {
+	font: normal 20px 'Bitter', serif;
+	color: dodgerblue;
+	margin-bottom: 5px;
+}
+
+.form-style .section span {
+	background: dodgerblue;
+	padding: 5px 10px 5px 10px;
+	position: absolute;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border: 4px solid #fff;
+	font-size: 14px;
+	margin-left: -45px;
+	color: #fff;
+	margin-top: -3px;
+}
+
+.form-style input[type="button"], .form-style input[type="submit"] {
+	background: white;
+	padding: 8px 20px 8px 20px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	color: dodgerblue;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+	font: normal 30px 'Bitter', serif;
+	-moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+	-webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+	border: 2px solid dodgerblue;
+	font-size: 15px;
+}
+
+.form-style input[type="button"]:hover, .form-style input[type="submit"]:hover
+	{
+	background: dodgerblue;
+	-moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+	-webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+	transition-duration: 1s;
+	color: white;
+}
+
+.form-style .privacy-policy {
+	float: right;
+	width: 250px;
+	font: 12px Arial, Helvetica, sans-serif;
+	color: #4D4D4D;
+	margin-top: 10px;
+	text-align: right;
+}
+
+body {
+	background: url('cover_5.png');
+}
+
+a {
+	color: lightgrey;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+a:hover {
+	color: white;
+}
+
+.navbar {
+	z-index: 10;
+	box-shadow: 2px 2px 2px 2px lightgrey;
+	overflow: hidden;
+	background-color: dodgerblue;
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
+}
+
+.navbar .label {
+	padding: 16px;
+	float: left;
+	color: white;
+	font-size: 16px;
+	width: 20vw;
+	text-align: center;
+	border-right: 1px solid lightgrey;
+}
+
+.navbar .label2 {
+	padding: 14px 20px;
+	float: left;
+	color: white;
+}
+
+.navbar a {
+	float: left;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 20px;
+	text-decoration: none;
+}
+
+.navbar a.right {
+	float: right;
+}
+
+.navbar a:hover {
+	background-color: white;
+	color: dodgerblue;
+}
+
+.navbar a.active {
+	background-color: white;
+	color: dodgerblue;
+	text-decoration: underline;
+	border-top: 1px solid dodgerblue;
+}
+
+.simplenav {
+	float: left;
+	color: lightgrey;
+	background: lightgrey;
+	border-right: 1px solid dodgerblue;
+	margin-top: 20px;
+	width: 20vw;
+	height: 100vh;
+	margin-top: -10vh;
+}
+
+.simplenav a {
+	text-decoration: none;
+	color: darkgrey;
+	cursor: pointer;
+}
+
+.simplenav a:hover {
+	background: darkgrey;
+	color: white;
+}
+
+footer {
+	border-top: 1px solid grey;
+	height: 5vh;
+	text-align: center;
+	float: bottom;
+	bottom: 0;
+	padding: 2vh;
+	margin-top: 80px;
+	background: dodgerblue;
+	color: white;
+}
+
+footer a {
+	text-decoration: none;
+}
+</style>
+</head>
+<body>
+	<div class="navbar">
+		<span class="label">Project Management System</span> <span
+			class="label2">PICT</span> <a href="LoginPage.html" class="right">Logout</a>
+		<a href="HomePage.jsp" class="right">Home</a> <a href="#"
+			class="right active">Team Page</a>
+	</div>
+	<div class="form-style">
+		<h1>
+			Upload Project Information. <span> Fill in the following
+				details regarding project team. </span>
+		</h1>
+		<form id="f1" action="UploadTeamInfoServlet" method="post">
+			
+
+			<div class="section">
+				<span>1</span>Student 1:
+			</div>
+			<div class="inner-wrap">
+				<label>Name: <input type="text" name="field3" required /></label> <label>Roll
+					No: <input type="text" name="field4" placeholder="31241" required />
+				</label>
+			</div>
+
+			<div class="section">
+				<span>2</span>Student 2:
+			</div>
+			<div class="inner-wrap">
+				<label>Name: <input type="text" name="field5" required /></label> <label>Roll
+					No: <input type="text" name="field6" placeholder="31241" required />
+				</label>
+			</div>
+
+			<div id="btns" class="button-section" style="float: right;">
+				<input type="button" value="Add Student" onclick="addStudent()">
+				<input type="submit" name="upload" value="Upload Information">
+				<br>
+			</div>
+		</form>
+	</div>
+
+	<div id="h4" style="display: none">
+		<input type="text" name="field7" value="12" style="display: none">
+		<input type="text" name="field8" value="12" style="display: none">
+	</div>
+	<div id="h5" style="display: none">
+		<input type="text" name="field9" value="12" style="display: none">
+		<input type="text" name="field10" value="12" style="display: none">
+	</div>
+
+	<script>
+		var i = 4;
+		var f = 7;
+		function addStudent() {
+			if (i < 6) {
+				var restr = "h" + i;
+				var reel = document.getElementById(restr);
+				reel.parentNode.removeChild(reel);
+				var sect0 = document.createElement("div");
+				sect0.classList.add("section");
+				var span1 = document.createElement("span");
+				var t0 = document.createTextNode(i-1);
+				span1.appendChild(t0);
+				sect0.appendChild(span1);
+				var str = "Student " + (i - 1) + ":";
+				sect0.appendChild(document.createTextNode(str));
+				var sect = document.createElement("div");
+				sect.classList.add("inner-wrap");
+				var lab1 = document.createElement("label");
+				var t1 = document.createTextNode("Name: ");
+				lab1.appendChild(t1);
+				var in1 = document.createElement("input");
+				in1.setAttribute("type", "text");
+				var fname1 = "field" + f;
+				f = f + 1;
+				in1.setAttribute("name", fname1);
+				in1.setAttribute("required", "true");
+				lab1.appendChild(in1);
+				sect.appendChild(lab1);
+				var lab2 = document.createElement("label");
+				var t2 = document.createTextNode("Roll no: ");
+				lab2.appendChild(t2);
+				var in2 = document.createElement("input");
+				in2.setAttribute("type", "text");
+				in2.setAttribute("placeholder","31241");
+				var fname2 = "field" + f;
+				f = f + 1;
+				in2.setAttribute("name", fname2);
+				in2.setAttribute("required", "true");
+				lab2.appendChild(in2);
+				sect.appendChild(lab2);
+				document.getElementById("f1").insertBefore(sect0,
+						document.getElementById("btns"));
+				document.getElementById("f1").insertBefore(sect,
+						document.getElementById("btns"));
+				i = i + 1;
+			} else {
+				alert("Cannot add more students! Limit Reached.");
+			}
+		}
+	</script>
+<footer>
+		<a href="TermsnConditions.html">Terms and conditions </a>|<a href="AboutUs.html"> About us </a>|<a
+			href="ContactUs.html"> Contact us </a> <br>
+		<span style="font-size: 10px;">&copy; Copyright 2020</span>
+	</footer>
+</body>
+</html>
